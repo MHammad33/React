@@ -28,10 +28,21 @@ const Counter = () => {
 	// @Solution: Use useState to update the counter
 	const [counter, setCounter] = useState(0);
 	const incrementValue = () => {
+		if (counter === 10) {
+			alert("Counter cannot be greater than 10!");
+			return;
+		}
+
 		setCounter(counter + 1);
 		console.log("Incremented! Previous Value:", counter);
 	};
+
 	const decrementValue = () => {
+		if (counter === 0) {
+			alert("Counter cannot be negative!");
+			return;
+		}
+
 		console.log("Decremented! Previous Value:", counter);
 		setCounter(counter - 1);
 	};
