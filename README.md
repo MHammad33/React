@@ -1,5 +1,10 @@
 # React
 
+## Why use hooks?
+
+- In this repo, in the project, when we increment without using hooks, the value changes but the UI does not change.
+- That's where we need hooks to help us re render the component with the new value
+
 ## How to create React Project?
 
 ```sh
