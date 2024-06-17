@@ -1,5 +1,21 @@
 # React
 
+## How to create React Project?
+
+```sh
+npm create vites@latest vite-project
+cd vite-project
+npm i
+```
+
+### How to start React Project?
+
+###
+
+```sh
+npm run dev
+```
+
 ### Why learn React?
 
 - React makes it easy to manage and build complex frontend
