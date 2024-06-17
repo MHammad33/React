@@ -1,5 +1,9 @@
 # React
 
+## Setup Tailwind
+
+Check [Tailwind Official Website](https://tailwindcss.com/docs/installation) for setup
+
 ## How to create React Project?
 
 ```sh
