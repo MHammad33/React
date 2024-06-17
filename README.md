@@ -1,5 +1,9 @@
 # React
 
+### React Fibre
+
+Click [here](https://github.com/acdlite/react-fiber-architecture) to learn more about React Fibre Architecture
+
 ### Why learn React?
 
 - React makes it easy to manage and build complex frontend
