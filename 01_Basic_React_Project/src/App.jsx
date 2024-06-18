@@ -1,13 +1,15 @@
-import Navbar from "./components/Navbar";
+import Login from "./components/Login";
+import Profile from "./components/Profile";
+import UserContextProvider from "./context/UserContextProvider";
 
 function App() {
-	const navLinks = ["Home", "About", "Services", "Contact", "Blog"];
+	console.log("App Rendered");
 
 	return (
-		<>
-			<Navbar navLinks={navLinks} />
-			<h1 className="text-3xl bg-green-400 p-2">Hello, React</h1>
-		</>
+		<UserContextProvider>
+			<Login />
+			<Profile />
+		</UserContextProvider>
 	);
 }
 
