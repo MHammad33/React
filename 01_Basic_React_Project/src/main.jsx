@@ -9,7 +9,8 @@ import {
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
 
-import { About, Contact, Home, User } from "./components";
+import { About, Contact, Github, Home, User } from "./components";
+import { GithubLoader } from "./components/Github.jsx";
 
 /***
  * @Complex
@@ -45,6 +46,7 @@ const router = createBrowserRouter(
 			<Route path="/about" element={<About />} />
 			<Route path="/contact" element={<Contact />} />
 			<Route path="/user/:id" element={<User />} />
+			<Route loader={GithubLoader} path="/github" element={<Github />} />
 			<Route path="*" element={<h1>404 Not Found</h1>} />
 		</Route>
 	)
