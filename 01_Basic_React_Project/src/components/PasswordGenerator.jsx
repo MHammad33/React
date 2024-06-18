@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const PasswordGenerator = () => {
 	const [length, setLength] = useState(8);
@@ -19,6 +19,11 @@ const PasswordGenerator = () => {
 		}
 		setPassword(pass);
 	}, [length, numberAllowed, characterAllowed, setPassword]);
+
+	// generatePassword() is called when the component is mounted
+	useEffect(() => {
+		generatePassword();
+	}, [length, numberAllowed, characterAllowed, generatePassword]);
 
 	return (
 		<div className="bg-gray-800 mx-auto shadow-md w-full max-w-md rounded-lg px-4 my-8 text-orange-500 p-5">
@@ -56,7 +61,7 @@ const PasswordGenerator = () => {
 						type="checkbox"
 						id="numbersInput"
 						defaultChecked={numberAllowed}
-						onChange={(e) => setNumberAllowed((prev) => !prev)}
+						onChange={() => setNumberAllowed((prev) => !prev)}
 						className="cursor-pointer"
 					/>
 					<label htmlFor="numbersInput">Numbers</label>
@@ -67,10 +72,10 @@ const PasswordGenerator = () => {
 						type="checkbox"
 						id="charInput"
 						defaultChecked={characterAllowed}
-						onChange={(e) => setCharacterAllowed((prev) => !prev)}
+						onChange={() => setCharacterAllowed((prev) => !prev)}
 						className="cursor-pointer"
 					/>
-					<label htmlFor="charInput">Numbers</label>
+					<label htmlFor="charInput">Characters</label>
 				</div>
 			</div>
 		</div>
