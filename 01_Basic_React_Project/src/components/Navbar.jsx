@@ -2,7 +2,7 @@ import Proptypes from "prop-types";
 
 const Navbar = ({ navLinks = [] }) => {
 	return (
-		<nav className="flex justify-center space-x-4">
+		<nav className="flex justify-center space-x-4 border-b-2">
 			{navLinks.map((link, index) => (
 				<a
 					key={index}
