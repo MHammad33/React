@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import Layout from "./Layout.jsx";
 
-import { About, Contact, Home } from "./components";
+import { About, Contact, Home, User } from "./components";
 
 /***
  * @Complex
@@ -44,6 +44,8 @@ const router = createBrowserRouter(
 			<Route path="/" element={<Home />} />
 			<Route path="/about" element={<About />} />
 			<Route path="/contact" element={<Contact />} />
+			<Route path="/user/:id" element={<User />} />
+			<Route path="*" element={<h1>404 Not Found</h1>} />
 		</Route>
 	)
 );
