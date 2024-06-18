@@ -23,21 +23,29 @@ const Login = () => {
 	};
 
 	return (
-		<div>
-			<h2>Login</h2>
+		<div className="flex flex-col max-w-md mx-auto my-12  bg-gray-800 p-4">
+			<h2 className="font-semibold text-xl text-white text-center m-4">
+				Login
+			</h2>
 			<input
+				className="w-full mt-2 px-2 py-1 rounded-md bg-gray-200 text-gray-800 outline-none "
 				type="text"
 				placeholder="username"
 				value={username}
 				onChange={(e) => setUsername(e.target.value)}
 			/>
 			<input
+				className="w-full mt-2 px-2 py-1 rounded-md bg-gray-200 text-gray-800 outline-none"
 				type="password"
 				placeholder="password"
 				value={password}
 				onChange={(e) => setPassword(e.target.value)}
 			/>
-			<button type="submit" onClick={handleLogin}>
+			<button
+				className="px-2 py-1 bg-blue-400 text-white rounded-md mt-2 cursor-pointer hover:bg-blue-500 focus:outline-none"
+				type="submit"
+				onClick={handleLogin}
+			>
 				Login
 			</button>
 		</div>
