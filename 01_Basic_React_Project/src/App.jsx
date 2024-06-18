@@ -1,9 +1,9 @@
-import { Header } from "./components";
+import Layout from "./Layout";
 
 function App() {
 	return (
 		<>
-			<Header />
+			<Layout />
 		</>
 	);
 }
