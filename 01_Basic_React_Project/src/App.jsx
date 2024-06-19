@@ -1,7 +1,5 @@
-import { useState } from "react";
-import Navbar from "./components/Navbar";
-import TodoForm from "./components/TodoForm";
-import TodoItem from "./components/TodoItem";
+import { useEffect, useState } from "react";
+import { Navbar, TodoForm, TodoItem } from "./components";
 import { TodoProvider } from "./contexts/TodoContext";
 
 function App() {
@@ -34,6 +32,20 @@ function App() {
 			)
 		);
 	};
+
+	// Get todos from local storage
+	useEffect(() => {
+		const todos = JSON.parse(localStorage.getItem("todos"));
+
+		if (todos && todos.length > 0) {
+			setTodos(todos);
+		}
+	}, []);
+
+	// Update local storage when todos change
+	useEffect(() => {
+		localStorage.setItem("todos", JSON.stringify(todos));
+	}, [todos]);
 
 	return (
 		<TodoProvider
