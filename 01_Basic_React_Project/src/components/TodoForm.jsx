@@ -17,6 +17,7 @@ function TodoForm() {
 		}
 
 		addTodo({ todo, isCompleted: false });
+		setTodo("");
 	};
 
 	return (
