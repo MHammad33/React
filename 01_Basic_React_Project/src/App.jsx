@@ -1,11 +1,44 @@
+import { useState } from "react";
 import Navbar from "./components/Navbar";
 import TodoForm from "./components/TodoForm";
+import TodoItem from "./components/TodoItem";
+import { TodoProvider } from "./contexts/TodoContext";
 
 function App() {
 	const navLinks = ["Home", "About", "Services", "Contact", "Blog"];
 
+	// Todo State
+	const [todos, setTodos] = useState([]);
+
+	// Defining methods
+	const addTodo = (todo) => {
+		setTodos((prev) => [{ id: Date.now(), ...todo }, ...prev]);
+	};
+
+	const updateTodo = (id, todo) => {
+		setTodos((prev) =>
+			prev.map((prevTodo) => (prevTodo.id === id ? todo : prevTodo))
+		);
+	};
+
+	const deleteTodo = (id) => {
+		setTodos((prev) => prev.filter((prevTodo) => prevTodo.id !== id));
+	};
+
+	const toggleCompleted = (id) => {
+		setTodos((prev) =>
+			prev.map((prevTodo) =>
+				prevTodo.id === id
+					? { ...prevTodo, isCompleted: !prevTodo.isCompleted }
+					: prevTodo
+			)
+		);
+	};
+
 	return (
-		<>
+		<TodoProvider
+			value={{ todos, addTodo, updateTodo, deleteTodo, toggleCompleted }}
+		>
 			<Navbar navLinks={navLinks} />
 			<div className="bg-[#172842] min-h-screen py-8">
 				<div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
@@ -17,11 +50,13 @@ function App() {
 					</div>
 
 					<div className="flex flex-wrap gap-y-3">
-						{/*Loop and Add TodoItem here */}
+						{todos.map((todo) => (
+							<TodoItem key={todo.id} />
+						))}
 					</div>
 				</div>
 			</div>
-		</>
+		</TodoProvider>
 	);
 }
 
