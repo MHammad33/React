@@ -8,7 +8,7 @@ function App() {
 	return (
 		<>
 			<Navbar navLinks={navLinks} />
-			<div className="bg-gray-800 flex justify-center text-white h-screen items-center">
+			<div className="bg-gray-800 flex flex-col justify-center text-white h-screen items-center gap-4">
 				<TodoForm />
 				<Todos />
 			</div>

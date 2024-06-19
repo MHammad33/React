@@ -12,9 +12,9 @@ const Todos = () => {
 			{todos.map((todo) => (
 				<div
 					key={todo.id}
-					className="bg-white/10 p-3 rounded-lg m-2 flex justify-between items-center"
+					className="bg-white/10 p-3 rounded-lg m-2 flex justify-between items-center gap-2"
 				>
-					<span>{todo.title}</span>
+					<span>{todo.text}</span>
 					<button
 						className="bg-red-600 text-white rounded-lg px-2 py-1"
 						onClick={() => dispatch(removeTodo(todo.id))}
