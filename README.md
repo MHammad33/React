@@ -1,5 +1,15 @@
 # React
 
+## How to use Redux?
+
+```sh
+npm install @reduxjs/toolkit
+```
+
+```sh
+npm install react-redux
+```
+
 ## Setup Tailwind
 
 Check [Tailwind Official Website](https://tailwindcss.com/docs/installation) for setup
