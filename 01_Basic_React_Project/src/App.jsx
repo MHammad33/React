@@ -1,3 +1,4 @@
+import TodoForm from "./components/AddTodo";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -6,7 +7,9 @@ function App() {
 	return (
 		<>
 			<Navbar navLinks={navLinks} />
-			<h1 className="text-3xl bg-green-400 p-2">Hello, React</h1>
+			<div className="bg-gray-800 flex justify-center text-white h-screen items-center">
+				<TodoForm />
+			</div>
 		</>
 	);
 }
