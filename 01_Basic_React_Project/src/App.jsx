@@ -1,4 +1,7 @@
 import Navbar from "./components/Navbar";
+import Input from "./components/Input";
+import Container from "./components/Container";
+import Button from "./components/Button";
 
 function App() {
 	const navLinks = ["Home", "About", "Services", "Contact", "Blog"];
@@ -6,7 +9,13 @@ function App() {
 	return (
 		<>
 			<Navbar navLinks={navLinks} />
-			<h1 className="text-3xl bg-green-400 p-2">Hello, React</h1>
+			<Container>
+				<form>
+					<Input placeholder="Username" />
+					<Input placeholder="Password" />
+					<Button type="submit">Submit</Button>
+				</form>
+			</Container>
 		</>
 	);
 }
