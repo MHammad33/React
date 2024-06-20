@@ -1,7 +1,10 @@
 import Navbar from "./components/Navbar";
+import config from "./config/config";
 
 function App() {
 	const navLinks = ["Home", "About", "Services", "Contact", "Blog"];
+
+	console.log("config", config.appWriteUrl);
 
 	return (
 		<>
