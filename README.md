@@ -1,5 +1,9 @@
 # React
 
+## Future Learning Resources
+
+[FreeAPI Projects](https://freeapi.app/)
+
 ### Why learn React?
 
 - React makes it easy to manage and build complex frontend
