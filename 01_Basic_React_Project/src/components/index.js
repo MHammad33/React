@@ -6,3 +6,6 @@ export { default as LogoutBtn } from "./Header/LogoutBtn";
 export { default as Input } from "./Input";
 export { default as Button } from "./Button";
 export { default as Select } from "./Select";
+export { default as AuthLayout } from "./AuthLayout";
+export { default as RTE } from "./RTE";
+export { default as PostForm } from "./post-form/PostForm";
